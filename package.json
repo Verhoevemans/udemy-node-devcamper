@@ -1,0 +1,19 @@
+{
+  "name": "devcamper",
+  "version": "1.0.0",
+  "description": "DevCamper API - Udemy course",
+  "main": "index.js",
+  "scripts": {
+    "start": "SET NODE_ENV=production && node server",
+    "start:dev": "nodemon server"
+  },
+  "author": "Jeroen Verhoeven",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
