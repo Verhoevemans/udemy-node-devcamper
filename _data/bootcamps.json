@@ -8,6 +8,11 @@
 		"phone": "(111) 111-1111",
 		"email": "enroll@devworks.com",
 		"address": "233 Bay State Rd Boston MA 02215",
+		"location": {
+			"type": "Point",
+			"coordinates": [42.3601, 71.0589],
+			"city": "Boston"
+		},
 		"careers": ["Web Development", "UI/UX", "Business"],
 		"housing": true,
 		"jobAssistance": true,
@@ -23,6 +28,11 @@
 		"phone": "(222) 222-2222",
 		"email": "enroll@moderntech.com",
 		"address": "220 Pawtucket St, Lowell, MA 01854",
+		"location": {
+			"type": "Point",
+			"coordinates": [42.6334, 71.3162],
+			"city": "Lowell"
+		},
 		"careers": ["Web Development", "UI/UX", "Mobile Development"],
 		"housing": false,
 		"jobAssistance": true,
@@ -38,6 +48,11 @@
 		"phone": "(333) 333-3333",
 		"email": "enroll@codemasters.com",
 		"address": "85 South Prospect Street Burlington VT 05405",
+		"location": {
+			"type": "Point",
+			"coordinates": [43.3255, 79.7990],
+			"city": "Burlington"
+		},
 		"careers": ["Web Development", "Data Science", "Business"],
 		"housing": false,
 		"jobAssistance": false,
