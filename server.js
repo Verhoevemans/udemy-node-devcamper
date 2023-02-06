@@ -4,6 +4,12 @@ const logger = require('morgan');
 const colors = require('colors');
 const fileupload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
+const mongoSanitize = require('express-mongo-sanitize');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const rateLimit = require('express-rate-limit');
+const hpp = require('hpp');
+const cors = require('cors');
 const path = require('path');
 
 const connectDB = require('./config/db');
@@ -35,6 +41,28 @@ if (process.env.NODE_ENV === 'development') {
 
 // File uploading
 app.use(fileupload());
+
+// Sanitize data
+app.use(mongoSanitize());
+
+// Set security headers, see: https://helmetjs.github.io/
+app.use(helmet());
+
+// Prevent Cross-site-scripting attacks, see: https://github.com/jsonmaur/xss-clean
+app.use(xss());
+
+// Rate limiting, see: https://github.com/express-rate-limit/express-rate-limit
+const limiter = rateLimit({
+    windowMs: 10 * 60 * 1000, // 10 minutes
+    max: 100
+});
+app.use(limiter);
+
+// Prevent http param pollution, see: https://github.com/analog-nico/hpp
+app.use(hpp());
+
+// Enable CORS, see: https://github.com/expressjs/cors
+app.use(cors());
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
